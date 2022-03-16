@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GarageMueller</name>
+    </assembly>
+    <members>
+        <member name="T:GarageMueller.Controllers.AutoController">
+            <summary>
+            API Auto CRUD
+            </summary>
+        </member>
+        <member name="M:GarageMueller.Controllers.AutoController.Get">
+            <summary>
+            Liefert alle Autos
+            </summary>
+            <remarks>Wenn keine Autos in der Datenbank sind wird trozdem Status 200 angezeigt.</remarks>
+            <response code="200">Collection von Autos</response>
+        </member>
+        <member name="M:GarageMueller.Controllers.AutoController.Create(GarageMueller.Model.Auto)">
+            <summary>
+            Erzeugt ein Auto
+            </summary>
+            <remarks>Erzeugt ein neues Auto in der Datenbank</remarks>
+            <param name="auto">Auto</param>
+            <response code="200">1 Auto erfolgreich hinzugefuegt</response>
+            <response code="400">Auto erstellen nicht erfolgreich</response>
+        </member>
+        <member name="M:GarageMueller.Controllers.AutoController.Update(GarageMueller.Model.Auto)">
+            <summary>
+            1 bestehendes Auto ändern
+            </summary>
+            <param name="auto">Auto</param>
+            <returns></returns>
+        </member>
+        <member name="M:GarageMueller.Controllers.AutoController.Delete(System.Int32)">
+            <summary>
+            Loescht ein bestehendes Auto
+            </summary>
+            <param name="id">Primary Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:GarageMueller.Controllers.AutoController.Get(System.Int32)">
+            <summary>
+            Liefert 1 Auto
+            </summary>
+            <param name="id">Primary Key</param>
+            <returns></returns>
+        </member>
+        <member name="M:GarageMueller.Controllers.AutoController.Patch(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{GarageMueller.Model.Auto})">
+            <summary>
+            Aendert 1 Auto
+            </summary>
+            <param name="id"></param>
+            <param name="auto"></param>
+            <returns>Das geaenderte Auto</returns>
+        </member>
+        <member name="T:GarageMueller.Database.GarageContext">
+            <summary>
+            Fake InMemory Datenbank
+            </summary>
+        </member>
+        <member name="P:GarageMueller.Model.Auto.Id">
+            <summary>
+            Primary Key
+            </summary>
+        </member>
+        <member name="P:GarageMueller.Model.Auto.Marke">
+            <summary>
+            Automarke, z.B . BMW
+            </summary>
+        </member>
+        <member name="P:GarageMueller.Model.Auto.Modell">
+            <summary>
+            Auto Modell, z.B . M1
+            </summary>
+        </member>
+        <member name="P:GarageMueller.Model.Auto.Leistung">
+            <summary>
+            Leistung in PS
+            </summary>
+        </member>
+        <member name="T:GarageMueller.Startup">
+            <summary>
+            Start Klasse
+            </summary>
+        </member>
+        <member name="M:GarageMueller.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:GarageMueller.Startup.Configuration">
+            <summary>
+            Configuration
+            </summary>
+        </member>
+        <member name="M:GarageMueller.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services">Service</param>
+        </member>
+        <member name="M:GarageMueller.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Konfiguriert die Pipeline
+            This method gets called by the runtime. USe this method to configuree the HTTP request pipeline.
+            </summary>
+            <param name="app">ASP Engine</param>
+            <param name="env">Environment</param>
+        </member>
+    </members>
+</doc>
